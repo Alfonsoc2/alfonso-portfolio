@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sendButton.disabled = true; // Disable send button while processing
 
         // Send message to backend
-        const response = await fetch('alfonso-portfolio-f2a58azpv-alfonsoc2s-projects.vercel.app', {
+        const response = await fetch('https://alfonso-portfolio-alfonsoc2s-projects.vercel.app/api/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
