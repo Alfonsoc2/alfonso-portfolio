@@ -1,32 +1,214 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#desktop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Taskbar Styles */
+#taskbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  height: 40px;
+  padding: 0 10px;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#start-menu img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#start-menu img:hover {
+  transform: scale(1.1);
+}
+
+.taskbar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.taskbar-item:hover {
+  color: white;
+}
+
+#workspace-indicators .workspace {
+  padding: 5px 8px;
+  border-radius: 3px;
+  background: #444;
+  color: #ccc;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+#workspace-indicators .workspace.active {
+  background: #9b59b6;
+  color: white;
+  font-weight: bold;
+}
+
+#workspace-indicators .workspace:hover {
+  background: #6c3483;
+}
+
+#clock {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Chat Window Styles */
+.window {
+  position: absolute;
+  background: #333;
+  border: 2px solid #555;
+  border-radius: 6px;
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.window.minimized {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.window .chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+  color: #ddd;
+  font-size: 16px;
+  border-bottom: 2px solid #555;
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.window-controls button {
+  background: #555;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.window-controls button:hover {
+  background: #9b59b6;
+}
+
+.chat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 2px solid #555;
+  padding: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 3px;
+  background: #444;
+  border: none;
+  color: white;
+  transition: outline 0.3s ease-in-out;
+}
+
+#user-input:focus {
+  outline: 1px solid #9b59b6;
+}
+
+#send-button {
+  padding: 10px;
+  background: #9b59b6;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#send-button:hover {
+  background: #8e44ad;
+}
+
+/* Avatar Styles */
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  50% {
+    transform: scale(1.05);
   }
-  
-  section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-  }
-  
-  h1, h2 {
-    color: #333;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-  }
-  
+}
+
+/* Chat Hidden State */
+.hidden {
+  display: none;
+}

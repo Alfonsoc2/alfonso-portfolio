@@ -3,52 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alfonso's Portfolio</title>
+  <title>Nyra's Desktop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hi, I’m Alfonso! I’m a developer passionate about AI, backend systems, and creating innovative tech solutions.</p>
-  </header>
+  <!-- Virtual Desktop -->
+  <div id="desktop">
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <div id="start-menu" class="taskbar-item">
+        <img src="nyra-avatar.png" alt="Nyra Start Menu" id="start-icon" onclick="reopenChat()">
+        <span>Nyra AI</span>
+      </div>
+      <div id="workspace-indicators" class="taskbar-item">
+        <span class="workspace active">1</span>
+        <span class="workspace">2</span>
+        <span class="workspace">3</span>
+      </div>
+      <div id="clock" class="taskbar-item">12:34 PM</div>
+    </div>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p><strong>Alfonso Centeno</strong></p>
-    <p><em>Bilingual Customer Service Professional | Aspiring Developer | Problem Solver</em></p>
-    <p>Hey, I’m Alfonso! Born and raised in Omaha, Nebraska, I’ve always had a strong passion for problem-solving and helping others. Over the years, I’ve honed my skills in customer service and technical support, gaining hands-on experience in fast-paced environments like Nissan and Cox Communications. As a bilingual professional fluent in both English and Spanish, I’m able to bridge communication gaps and provide solutions that truly meet customers' needs.</p>
-    <p>Having served as an Assistant Service Manager, I’ve developed a deep appreciation for leadership, team coordination, and operational efficiency. But I’m not stopping there—I’ve decided to take my career to the next level by diving into the world of backend development and AI. I’m passionate about technology’s ability to create meaningful solutions, and I’m currently expanding my skills to build the tools and systems that will help improve how people interact with technology.</p>
-    <p>In my free time, I’m always exploring new coding languages and diving into projects that challenge me to grow. Whether I’m working with customer service teams or developing a new AI-driven app, I’m focused on building solutions that make life easier, more efficient, and more connected.</p>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Customer Service & Support: Empathetic client interaction, problem resolution, and service excellence.</li>
-      <li>Communication: Fluent in English (Expert) and Spanish (Fluent) for effective bilingual support.</li>
-      <li>Technical Troubleshooting: Experienced in technical support and issue resolution.</li>
-      <li>Leadership & Team Coordination: Managed service teams and resolved escalated issues efficiently.</li>
-      <li>Backend Development: Knowledge of Python, JavaScript, and AI-focused projects.</li>
-      <li>Problem Solving & Conflict Resolution: Skilled in de-escalating tense situations and maintaining customer satisfaction.</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Check out some of my ongoing work:</p>
-    <ul>
-      <li><a href="#">AI Chatbot Project</a></li>
-      <li><a href="#">Personal Portfolio</a></li>
-      <li><a href="#">Python Projects</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>Contact me: <a href="mailto:alfonsocenteno2@gmail.com">alfonsocenteno2@gmail.com</a></p>
-  </footer>
+    <!-- Chat Window -->
+    <div class="window nyra-chat" id="nyra-chat">
+      <div class="chat-header">
+        <span class="window-title">Nyra AI</span>
+        <div class="window-controls">
+          <button id="minimize-button">_</button> <!-- Minimize button, now used to close too -->
+        </div>
+      </div>
+      <div class="chat-body">
+        <!-- Avatar Section -->
+        <div class="avatar">
+          <img src="nyra-avatar.png" alt="Nyra's Avatar">
+        </div>
+        <!-- Messages Section -->
+        <div class="chat-messages"></div>
+        <!-- Input Section -->
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Say something to Nyra...">
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
