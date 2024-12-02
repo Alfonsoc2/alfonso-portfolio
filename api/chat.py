@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # CORS setup for frontend URL
-CORS(app, origins=["https://alfonso-portfolio-e8ibs1mht-alfonsoc2s-projects.vercel.app"])
+CORS(app, origins=["https://alfonso-portfolio-lemon.vercel.app"])
 
 # API key from environment variable
 api_key = os.getenv("GOOGLE_API_KEY")
