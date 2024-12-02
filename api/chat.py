@@ -46,8 +46,3 @@ def send_to_gemini(message):
     except Exception as e:
         print(f"Error communicating with Gemini: {e}")
         raise
-
-# Vercel requires this handler for serverless functions
-def handler(req, res):
-    return app(req, res)
-
