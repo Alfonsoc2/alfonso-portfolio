@@ -4,9 +4,14 @@ from dotenv import load_dotenv
 import os
 from flask_cors import CORS
 
-CORS(app, origins=["https://alfonso-portfolio-nb4h0ndcr-alfonsoc2s-projects.vercel.app"])
 # Load environment variables for local development
 load_dotenv()
+
+# Initialize the Flask app
+app = Flask(__name__)
+
+# Set up CORS after initializing the app
+CORS(app, origins=["https://alfonso-portfolio-nb4h0ndcr-alfonsoc2s-projects.vercel.app"])
 
 # Get API key from environment variable
 api_key = os.getenv("GOOGLE_API_KEY")
@@ -19,9 +24,6 @@ else:
 
 # Configure the Gemini API with the loaded API key
 genai.configure(api_key=api_key)
-
-app = Flask(__name__)
-CORS(app)  # Enable Cross-Origin Resource Sharing (CORS)
 
 @app.route('/chat', methods=['POST'])
 def chat():
