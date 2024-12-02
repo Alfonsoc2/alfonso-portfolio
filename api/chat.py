@@ -25,7 +25,7 @@ else:
 # Configure the Gemini API with the loaded API key
 genai.configure(api_key=api_key)
 
-@app.route('/chat', methods=['POST'])
+@app.route('api/chat', methods=['POST'])
 def chat():
     """Handles POST requests from the frontend."""
     # Get the user message from the frontend
