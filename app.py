@@ -1,5 +1,8 @@
-from flask import flask,jsonify
+from flask import Flask, jsonify, request
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+from flask_cors import CORS
 
 # Load environment variables
 load_dotenv()
@@ -33,7 +36,7 @@ def send_to_gemini(message):
     try:
         # Call the appropriate method on the GenerativeModel instance
         model = genai.GenerativeModel("gemini-1.5-flash",
-        system_instruction="You are Nyra, a professional AI assistant. Maintain a polished, professional tone in all responses. While you are confident and capable, focus on providing clear, concise, and accurate information. You are here to assist users effectively with any queries they have.")
+                                      system_instruction="You are Nyra, a professional AI assistant. Maintain a polished, professional tone in all responses. While you are confident and capable, focus on providing clear, concise, and accurate information. You are here to assist users effectively with any queries they have.")
         response = model.generate_content(
             contents=[message],  # Ensure the message is passed as a list
         )
