@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 from flask_cors import CORS
 
+CORS(app, origins=["https://alfonso-portfolio-nb4h0ndcr-alfonsoc2s-projects.vercel.app"])
 # Load environment variables for local development
 load_dotenv()
 
