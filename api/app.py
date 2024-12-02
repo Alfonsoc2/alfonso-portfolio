@@ -1,4 +1,7 @@
-from flask import flask,jsonify
+import os
+from dotenv import load_dotenv
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import google.generativeai as genai
 
 # Load environment variables
