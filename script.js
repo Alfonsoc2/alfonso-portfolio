@@ -86,3 +86,15 @@ setInterval(updateClock, 1000);
 
 // Initial call to avoid delay
 updateClock();
+// Workspace Switching Logic
+document.querySelectorAll('.workspace').forEach((workspaceButton, index) => {
+  workspaceButton.addEventListener('click', () => {
+    // Remove 'active' class from all buttons and sections
+    document.querySelectorAll('.workspace').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.workspace-content').forEach(section => section.classList.remove('active'));
+
+    // Add 'active' class to the clicked button and corresponding section
+    workspaceButton.classList.add('active');
+    document.getElementById(`workspace-${index + 1}`).classList.add('active');
+  });
+});
