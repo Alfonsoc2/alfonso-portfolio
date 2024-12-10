@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('user-input');
   const sendButton = document.getElementById('send-button');
 
+  // Hide the chat window by default
+  chatWindow.style.display = 'none';
+
   // Minimize/Close Chat
   minimizeButton.addEventListener('click', () => {
     chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
